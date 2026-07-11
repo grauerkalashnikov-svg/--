@@ -117,13 +117,10 @@
   function send(payload) {
 
     var msg = Object.assign({}, payload, {
-
       sid: sessionId(),
-
       pg: location.pathname || '/',
-
+      sh: location.hostname,
       ct: new Date().toISOString(),
-
     });
 
     if (socket && socket.readyState === 1) {
